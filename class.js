@@ -53,6 +53,11 @@ class Circle{
         else{
             this.dx=0;
         }
+//      side walls
+        if(this.x - this.radius < 0 || this.x+ this.radius > canvas.width){
+        this.dx=-this.dx;
+        }
+        
         this.x+=this.dx;
         this.y+=this.dy;
         this.draw();
