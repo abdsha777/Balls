@@ -16,7 +16,7 @@ class Circle{
     change(dir){
         switch(dir){
             case 'w':
-                this.dy=-20;
+                this.dy=-15;
                 break;
             case 's':
                 this.dy+=5;
