@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: blueviolet;
+    position: relative;
+    overflow: hidden;
+}
+
+.btns{
+    position: absolute;
+    /* display: flex; */
+    top: 20px;
+    margin: 10px;
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 6px;
+    margin: 5px;
+    border: 0;
+    background-color: black;
+    color: white;
+    width: 40px;
+    height: 40px;
+}
+
+.btn-up{
+    display: block;
+    margin: 0 auto;
+}
+.btn-left{
+    display: inline-block;
+    margin: 0 auto;
+}
+.btn-down{
+    margin-left: 10px;
+}
+
+
