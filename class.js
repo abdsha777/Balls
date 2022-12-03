@@ -1,3 +1,4 @@
+const gravity=0.4;
 class Circle{   
     constructor(x,y){
         this.x=x
@@ -15,30 +16,42 @@ class Circle{
     change(dir){
         switch(dir){
             case 'w':
-                this.dx=0;
-                this.dy=-3;
+                this.dy=-20;
                 break;
             case 's':
-                this.dx=0;
-                this.dy=3;
+                this.dy+=5;
                 break;
             case 'a':
-                this.dx=-3;
-                this.dy=0;
+                this.dx=-10;
                 break;
             case 'd':
-                this.dx=3;
-                this.dy=0;
+                this.dx=10;
                 break;
         }
     }
     update(){
-
-        if(this.x + this.radius > canvas.width || this.x - this.radius <0){
-            this.dx=-this.dx;
+        if(this.y +this.radius + this.dy < canvas.height){
+            this.dy+=gravity;
         }
-        if(this.y + this.radius > canvas.height || this.y - this.radius <0){
-            this.dy=-this.dy;
+        else{
+            if(this.dy<=1){
+                this.dy=0;
+            }
+            else{
+                this.dy=-this.dy + gravity*3;
+            }
+        }
+        if(this.dx==0){
+            this.dx=0;
+        }
+        else if(this.dx<0){
+            this.dx+=gravity;
+        }
+        else if(this.dx>0){
+            this.dx-=gravity;
+        }
+        else{
+            this.dx=0;
         }
         this.x+=this.dx;
         this.y+=this.dy;
