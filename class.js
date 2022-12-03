@@ -54,7 +54,7 @@ class Circle{
             this.dx=0;
         }
 //      side walls
-        if(this.x - this.radius < 0 || this.x+ this.radius > canvas.width){
+        if(this.x - this.radius - this.dx < 0 || this.x+ this.radius + this.dx > canvas.width){
         this.dx=-this.dx;
         }
         
